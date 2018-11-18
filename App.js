@@ -1,11 +1,13 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View, Text, SafeAreaView, Image, TextInput, Button } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
-import AppNavigator from './navigation/AppNavigator';
+import LoginScreen from "./stories/login/LoginScreen.js";
+import UserNavigation from "./navigation/AppNavigator";
+import { View, Text } from 'react-native';
 
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
+    currentWindow: "user"
   };
 
   render() {
@@ -18,30 +20,16 @@ export default class App extends React.Component {
         />
       );
     } else {
-      return (
-        <SafeAreaView style={styles.container}>
-          <Image style={styles.image} source={require('./assets/images/foodthief.png')} />
-          <TextInput placeholder="Username" placeholderTextColor='#999'
-            style={styles.loginInput}
-            onChangeText={(text) => this.setState({text})}
-            value={this.state.text}
-          />
-          <TextInput
-            placeholder="Password" placeholderTextColor='#999'
-            style={styles.loginInput}
-            onChangeText={(text2) => this.setState({text2})}
-            value={this.state.text2}
-          />
-          <Button onPress={() => {}} title="Login" />
-          <Text style={{color: "rgba(0,0,0,0.5)"}}>Forgot Password?</Text>
-        </SafeAreaView>
-      );
+      if (this.state.currentWindow == "login")
+        return <LoginScreen submitFunction={() => this.setState({currentWindow: "user"})} />
+      if (this.state.currentWindow == "user")
+        return <UserNavigation />
+      else {
+        return <LoginScreen submitFunction={() => this.setState({currentWindow: "user"})} />
+      }
     }
   }
-  // {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-  // <AppNavigator />
-  // <Image style={styles.image} source={require('./assets/images/file.jpeg')} />
-  // <Text style={styles.centerText}>"You have a beautiful mind."</Text>
+  
   _loadResourcesAsync = async () => {
     return Promise.all([
       Asset.loadAsync([
@@ -70,30 +58,3 @@ export default class App extends React.Component {
     this.setState({ isLoadingComplete: true });
   };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    marginLeft: "10%",
-    marginRight: "10%",
-  },
-  leftJustifedText: {
-    //justifyContent: 'left',
-    textAlign: 'left'
-  },
-  image : {
-    resizeMode: "contain",
-    marginBottom: 50,
-    width: "100%"
-  },
-  loginInput: {
-    height: 40, 
-    width: "100%", 
-    borderColor: 'gray', 
-    borderWidth: 1,
-    paddingHorizontal: 10
-  }
-});

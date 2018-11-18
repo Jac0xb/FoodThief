@@ -1,7 +1,21 @@
 import React from 'react';
 import { Icon } from 'expo';
 
-import Colors from '../constants/Colors';
+const tintColor = '#2f95dc';
+
+var Colors = {
+  tintColor,
+  tabIconDefault: '#ccc',
+  tabIconSelected: tintColor,
+  tabBar: '#fefefe',
+  errorBackground: 'red',
+  errorText: '#fff',
+  warningBackground: '#EAEB5E',
+  warningText: '#666804',
+  noticeBackground: tintColor,
+  noticeText: '#fff',
+};
+
 
 export default class TabBarIcon extends React.Component {
   render() {
