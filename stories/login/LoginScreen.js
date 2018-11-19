@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,0.5)",
     textDecorationLine: 'underline'
   },
+  
   container: {
     flex: 1,
     justifyContent: 'space-around',

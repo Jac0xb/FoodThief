@@ -1,0 +1,86 @@
+[
+  {
+    key: 'a',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'b',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'c',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'd',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },
+  {
+    key: 'e',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'f',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'g',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'h',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },
+  {
+    key: 'i',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'j',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'k',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  },  
+  {
+    key: 'l',
+    title: 'Doritos',
+    distance: '600 meters',
+    store: 'Wellcome',
+    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+  }
+]

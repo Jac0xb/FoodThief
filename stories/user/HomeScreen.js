@@ -1,46 +1,60 @@
 import React from 'react';
-import { Icon } from 'react-native-elements'
+import { Icon, SearchBar } from 'react-native-elements'
 import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView
+    ScrollView,
+    StyleSheet,
+    Text,
+    View,
+    SafeAreaView
 } from 'react-native'
 
-;
+import ShopItem from './components/shopItem.js';
+import UnifiedSearchBar from './components/searchbar.js'
+import ItemDescription from './components/itemDescription.js'
+import Data from '../../constants/ShopItems.json';
+
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    header: null,
-  };
-
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.filterContainer}>
-        <Icon name='rowing' />
-          <Text style={styles.filterText}>Filter</Text>
-        </View>
-        <ScrollView style={{}} contentContainerStyle={{}}>
-          
-        </ScrollView>
-      </SafeAreaView>
-    );
-  }
+    static navigationOptions = {
+        header: null,
+    };
+  
+    state = {
+      currentItem : null
+    }
+  
+    render() {
+    
+        
+        
+        return (
+            <SafeAreaView style={styles.container}>
+                <View style={styles.filterContainer}>
+                    <UnifiedSearchBar/>
+                </View>
+                {(this.state.currentItem) 
+                ?
+                    <ItemDescription item={this.state.currentItem}/> 
+                :
+                    <ScrollView contentContainerStyle={[styles.shopScrollView, styles.devObject]} contentInsetAdjustmentBehavior="automatic">
+                      {Data.map(function(item, index) {
+                        item.pos = index;
+                        return <ShopItem onPress={(() => {this.setState({currentItem: item})}).bind(this)} key={item.key} item={item} />
+                      }.bind(this))}
+                      
+                    </ScrollView>
+                }
+            </SafeAreaView>
+        );
+    }
   
 }
 
 const styles = StyleSheet.create({
-  filterText: {
-    paddingVertical: 10,
-    paddingHorizontal: 5
-  },
-  filterContainer: {
-    backgroundColor: "#F1F1F1",
-    textAlign: "right",
-    flexDirection: "row-reverse",
-    width: "100%"
+  shopScrollView: {
+    flexGrow: 1,
+    flexWrap: "wrap",
+    flexDirection: "row"
   },
   container: {
     flex: 1,
