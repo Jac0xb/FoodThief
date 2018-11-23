@@ -14,7 +14,7 @@ export default class ItemDescription extends React.Component {
         
         return (
         <ScrollView style={styles.scrollViewContainer}>
-            <Image source={{uri: item.image}} />
+            <Image styles={{}} source={{uri: item.image}} />
             <Text>{item.title}</Text>
         </ScrollView>
         );

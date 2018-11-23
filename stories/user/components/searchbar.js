@@ -5,7 +5,7 @@ import {
   View,
   StyleSheet
 } from 'react-native'
-
+import { LinearGradient } from 'expo';
 
 export default class UnifiedSearchBar extends React.Component {
     render() { 

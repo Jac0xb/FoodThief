@@ -7,7 +7,7 @@ import { View, Text } from 'react-native';
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
-    currentWindow: "user"
+    currentWindow: "login"
   };
 
   render() {
