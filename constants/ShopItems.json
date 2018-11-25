@@ -1,86 +1,73 @@
 [
   {
     key: 'a',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+    title: 'Olive Oil',
+    image: 'http://jacobbrown.net/assets/images/foods/bottle_2.jpg'
+  }, 
+  {
+    key: 'a',
+    title: 'Mushroom Soup',
+    image: 'http://jacobbrown.net/assets/images/foods/canned_1.jpg'
+  }, 
+  {
+    key: 'a',
+    title: 'Chicken Noodle Soup',
+    image: 'http://jacobbrown.net/assets/images/foods/canned_2.jpg'
+  }, 
+  {
+    key: 'a',
+    title: 'Canned Green Beans',
+    image: 'http://jacobbrown.net/assets/images/foods/canned_3.jpg'
+  }, 
+  {
+    key: 'a',
+    title: 'Soy Sauce',
+    image: 'http://jacobbrown.net/assets/images/foods/bottle_1.jpg',
+    description: 'Lee Kum Kee Premium Soy Sauce is made from premium soybeans and wheat flour. It is brewed according to the traditional and natural method which gives a rich soy flavor and aroma that will delicately enhance the taste of any dish.'
   },  
   {
-    key: 'b',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
-  },  
+    key: 'a',
+    title: 'Canned Corn',
+    image: 'http://jacobbrown.net/assets/images/foods/canned_4.jpg'
+  }, 
   {
-    key: 'c',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
-  },  
+    key: 'a',
+    title: 'Spam',
+    image: 'http://jacobbrown.net/assets/images/foods/canned_6.jpg'
+  }, 
   {
-    key: 'd',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+    key: 'a',
+    title: 'Rice',
+    image: 'http://jacobbrown.net/assets/images/foods/carbs_1.jpg'
+  }, 
+  {
+    key: 'a',
+    title: 'Quinoa',
+    image: 'http://jacobbrown.net/assets/images/foods/carbs_2.jpg'
+  }, 
+  {
+    key: 'a',
+    title: 'White Sugar',
+    image: 'http://jacobbrown.net/assets/images/foods/carbs_3.jpg'
+  }, 
+  {
+    key: 'a',
+    title: 'Beef Broth',
+    image: 'http://jacobbrown.net/assets/images/foods/carbs_4.jpg'
   },
   {
-    key: 'e',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
-  },  
-  {
-    key: 'f',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
-  },  
-  {
-    key: 'g',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
-  },  
-  {
-    key: 'h',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+    key: 'a',
+    title: 'Granola Cereal',
+    image: 'http://jacobbrown.net/assets/images/foods/cereal_1.jpg'
   },
   {
-    key: 'i',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
-  },  
+    key: 'a',
+    title: 'Cheez-its',
+    image: 'http://jacobbrown.net/assets/images/foods/crackers_1.jpg'
+  }, 
   {
-    key: 'j',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
-  },  
-  {
-    key: 'k',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
-  },  
-  {
-    key: 'l',
-    title: 'Doritos',
-    distance: '600 meters',
-    store: 'Wellcome',
-    image: 'https://4.imimg.com/data4/FJ/SC/MY-3270126/non-woven-rice-packaging-bag-500x500.jpg'
+    key: 'a',
+    title: 'Wheat Thins',
+    image: 'http://jacobbrown.net/assets/images/foods/crackers_2.jpg'
   }
 ]

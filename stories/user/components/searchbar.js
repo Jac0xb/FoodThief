@@ -1,38 +1,33 @@
 import React from 'react';
-import { Icon, SearchBar } from 'react-native-elements'
+import { Icon, SearchBar, } from 'react-native-elements';
 import {
   Text,
   View,
-  StyleSheet
-} from 'react-native'
+  StyleSheet,
+  TextInput
+} from 'react-native';
 import { LinearGradient } from 'expo';
 
 export default class UnifiedSearchBar extends React.Component {
+    
+    state = {input : ""}
+    
     render() { 
-        return (<View style={styles.filterContainer}>
-          <SearchBar 
-            containerStyle={styles.filterSearchbarContainer}
-            inputStyle={styles.filterSerachbarInput}
-            onChangeText={() => {}}
-            onClearText={() => {}}
-            placeholder='What are you looking for?' 
-          />
-          <View style={styles.filterGroup}>
-            <Icon containerStyle={styles.filterIcon} name='dehaze' size={14} />
-            <Text style={[styles.filterText]} adjustsFontSizeToFit={true}>Filter</Text>
-          </View>
-        </View>)
+        
+        return (<LinearGradient colors={['#00d2ff', '#3a7bd5']} start={[0, 0]} end={[10,0]} style={[styles.filterContainer, {marginLeft: 16, marginRight: 16, borderRadius: 16+12}]}>
+            <TextInput onFocus={this.props.onFocus} onSubmitEditing={this.props.onSubmitEditing}
+            style={{borderColor: "#F1F1F1", paddingLeft: 16, paddingRight: 24, paddingVertical: 12, fontSize: 16, color: "white", width: "100%", textAlign: "left"}}
+            onChangeText={(input) => this.setState({input})}
+            placeholderTextColor="white"
+            selectionColor="white"
+            placeholder="What are you looking for?" 
+            />
+            <Icon name='search' color="#F1F1F1" containerStyle={{position: 'absolute', right: 24}}/>
+        </LinearGradient>)
     }
 }
 
 const styles = StyleSheet.create({
-    filterSearchbarContainer: {
-      flex: 1,
-      backgroundColor: "rgba(0,0,0,0.0)",
-      borderColor: "rgba(0,0,0,0.0)",
-      borderTopColor : "rgba(0,0,0,0.0)",
-      borderBottomColor: "rgba(0,0,0,0.0)"
-    },
     filterSerachbarInput: {
       backgroundColor: "white"
     },
@@ -44,10 +39,8 @@ const styles = StyleSheet.create({
       marginRight: 5
     },
     filterContainer: {
-      backgroundColor: "#F1F1F1",
       flexDirection: "row",
       justifyContent: "center",
-      width: "100%",
       alignItems: "center"
     },
     filterGroup: {
