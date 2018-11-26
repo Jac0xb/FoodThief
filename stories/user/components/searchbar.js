@@ -15,7 +15,7 @@ export default class UnifiedSearchBar extends React.Component {
     render() { 
         
         return (<LinearGradient colors={['#00d2ff', '#3a7bd5']} start={[0, 0]} end={[10,0]} style={[styles.filterContainer, {marginLeft: 16, marginRight: 16, borderRadius: 16+12}]}>
-            <TextInput onFocus={this.props.onFocus} onSubmitEditing={this.props.onSubmitEditing}
+            <TextInput onFocus={this.props.onFocus} onSubmitEditing={() => this.props.onSubmitEditing(this.state.input) }
             style={{borderColor: "#F1F1F1", paddingLeft: 16, paddingRight: 24, paddingVertical: 12, fontSize: 16, color: "white", width: "100%", textAlign: "left"}}
             onChangeText={(input) => this.setState({input})}
             placeholderTextColor="white"
@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
     filterContainer: {
       flexDirection: "row",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      marginTop: 8
     },
     filterGroup: {
       flexDirection : "row",

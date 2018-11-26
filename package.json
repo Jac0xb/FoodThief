@@ -14,10 +14,13 @@
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
+    "@expo/vector-icons": "^8.0.0",
     "expo": "^31.0.2",
+    "native-base": "^2.8.1",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-elements": "^0.19.1",
+    "react-native-keyboard-aware-scroll-view": "^0.7.4",
     "react-native-linear-gradient": "^2.4.4",
     "react-navigation": "^2.18.2"
   },

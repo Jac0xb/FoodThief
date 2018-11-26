@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, SearchBar } from 'react-native-elements'
+//import { IconElements } from 'react-native-elements'
 import {
     ScrollView,
     StyleSheet,
@@ -9,12 +9,32 @@ import {
     TouchableHighlight
 } from 'react-native'
 
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import ShopItem from './components/shopItem.js';
 import UnifiedSearchBar from './components/searchbar.js'
 import ItemDescription from './components/itemDescription.js'
-import Data from '../../constants/ShopItems.json';
+import { Ionicons } from '@expo/vector-icons';
 
-var stores = ["Wellcome, Hang Hau", "FamilyMart, ", "PARKnSHOP, Clear Water Bay", "Fusion, HKUST Campus"];
+var stores = ["Wellcome", "PARKnSHOP", "Fusion"];
+var dates = ["22h", "1d22h", "2d22h", "7d22h"]
+
+var implantedData = []
+
+import Data from '../../constants/ShopItems.json';
+Data.map(function(item, index) {
+    item.pos = index;
+    item.store = stores[Math.floor(Math.random() * stores.length)];
+    item.distance = Math.round(Math.random() * 3.0, 2) + " Km";
+    item.date = randomElement(dates);
+    implantedData.push(item);
+});
+
+function randomElement(arr) {
+    
+    return arr[Math.min(Math.round(Math.random() * arr.length, 0), arr.length - 1)]
+    
+}
+
 
 export default class HomeScreen extends React.Component {
     static navigationOptions = {
@@ -22,48 +42,104 @@ export default class HomeScreen extends React.Component {
     };
   
     state = {
-      currentItem : null,
-      searchFocused: false
+        cart: [],
+        currentItem : null,
+        scene: "search",
+        filter: null
     }
   
     render() {
 
-        var reactObject = <UnifiedSearchBar onSubmitEditing={() => {this.setState({searchFocused: false})}} onFocus={() => {this.setState({searchFocused: true})}}/>     
-    
-        if (this.state.searchFocused) {
-            return (
+        var searchBar = <UnifiedSearchBar onSubmitEditing={(text) => this.setFilter(text)} onFocus={() => {this.setState({scene: "focused"})}}/>;
+        
+        var activeComponent = null;
+         
+        if (this.state.scene == "focused") {
+            activeComponent = (
                 <SafeAreaView style={styles.container}>
-                    {reactObject}
+                    {searchBar}
                     <ExpandedSearch/>
                 </SafeAreaView>
             )
         }
-        
-        if (this.state.currentItem) {
-            return (
+        else if (this.state.scene == "details") {
+            activeComponent = (
             <SafeAreaView style={styles.container}>
-                <View>
-                    <Icon onPress={this.setState({currentItem: null})} name="ios-arrow-back"/>
-                </View>
-                <ItemDescription item={this.state.currentItem}/> 
-            </SafeAreaView>
-            )
+                <ItemDescription item={this.state.currentItem} addToCart={(item, quantity) => {
+                    var newCart = this.state.cart.slice(0);
+                    newCart.push({item, quantity});
+                    this.setState({cart: newCart, scene: "search"})
+                }} /> 
+            </SafeAreaView>)
+        }
+        else if (this.state.scene == "cart") {
+            activeComponent = (<SafeAreaView style={styles.container}>
+            </SafeAreaView>)
+        }
+        else {
+            activeComponent = (
+            <ScrollView contentContainerStyle={[styles.shopScrollView, styles.devObject]} contentInsetAdjustmentBehavior="automatic">
+                {searchBar}
+                {implantedData.map(function(item) {
+                
+                    if (this.state.filter) {
+                        if (!item.title.includes(this.state.filter))
+                            return;
+                    }
+                    
+                    return <ShopItem onPress={(() => {this.setState({currentItem: item, scene: "details"})}).bind(this)} key={item.title} item={item} />
+                }.bind(this))}
+            </ScrollView>)
+        }
+        
+        var menuOptions = (this.state.scene == "details" ? "ios-arrow-back" : "ios-menu");
+        
+        var sum = 0;
+        for (var i = 0; i < this.state.cart.length; i++) {
+            sum += this.state.cart[i].quantity;
         }
         
         return (
-            <SafeAreaView style={styles.container}>
-                {reactObject}
-                <ScrollView contentContainerStyle={[styles.shopScrollView, styles.devObject]} contentInsetAdjustmentBehavior="automatic">
-                  {Data.map(function(item, index) {
-                    item.pos = index;
-                    item.store = stores[Math.floor(Math.random() * stores.length)];
-                    item.distance = Math.round(Math.random() * 3.0, 2) + " Km";
-                    return <ShopItem onPress={(() => {this.setState({currentItem: item})}).bind(this)} key={item.title} item={item} />
-                  }.bind(this))}
-                  
-                </ScrollView>
-            </SafeAreaView>
+                <Container>
+                    <Header>
+                      <Left>
+                        <Button onPress={() => {this.goBack()}} transparent>
+                          <Ionicons style={{marginHorizontal: 8, borderRadius: 1}} size={24} name={menuOptions} />
+                        </Button>
+                      </Left>
+                      <Body>
+                        <Title>Search</Title>
+                      </Body>
+                      <Right>
+                        <Button transparent>
+                          <Text style={{position: "absolute"}}>{sum}</Text>
+                          <Ionicons size={24} name='ios-cart' />
+                        </Button>
+                        <Button transparent>
+                          <Ionicons size={24} name='ios-map' />
+                        </Button>
+                      </Right>
+                    </Header>
+                    
+                    {activeComponent}
+                    
+                </Container>
         );
+    }
+    
+    
+    setFilter(input) {
+        
+        if (input.length <= 0) {
+            this.setState({filter: null, scene: null});
+        }
+        else {
+            this.setState({filter: input, scene: null});
+        }
+    }
+    
+    goBack() {
+        this.setState({scene: "search"});
     }
   
 }

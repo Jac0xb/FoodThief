@@ -2,72 +2,86 @@
   {
     key: 'a',
     title: 'Olive Oil',
-    image: 'http://jacobbrown.net/assets/images/foods/bottle_2.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/bottle_2.jpg',
+    'prices': [20, 40]
   }, 
   {
     key: 'a',
     title: 'Mushroom Soup',
-    image: 'http://jacobbrown.net/assets/images/foods/canned_1.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/canned_1.jpg',
+    'prices': [5, 25]
   }, 
   {
     key: 'a',
     title: 'Chicken Noodle Soup',
-    image: 'http://jacobbrown.net/assets/images/foods/canned_2.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/canned_2.jpg',
+    'prices': [15, 30]
   }, 
   {
     key: 'a',
     title: 'Canned Green Beans',
-    image: 'http://jacobbrown.net/assets/images/foods/canned_3.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/canned_3.jpg',
+    'prices': [10, 25]
   }, 
   {
     key: 'a',
     title: 'Soy Sauce',
     image: 'http://jacobbrown.net/assets/images/foods/bottle_1.jpg',
-    description: 'Lee Kum Kee Premium Soy Sauce is made from premium soybeans and wheat flour. It is brewed according to the traditional and natural method which gives a rich soy flavor and aroma that will delicately enhance the taste of any dish.'
+    description: 'Lee Kum Kee Premium Soy Sauce is made from premium soybeans and wheat flour. It is brewed according to the traditional and natural method which gives a rich soy flavor and aroma that will delicately enhance the taste of any dish.',
+    'prices': [20, 45]
   },  
   {
     key: 'a',
     title: 'Canned Corn',
-    image: 'http://jacobbrown.net/assets/images/foods/canned_4.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/canned_4.jpg',
+    'prices': [10, 25]
   }, 
   {
     key: 'a',
     title: 'Spam',
-    image: 'http://jacobbrown.net/assets/images/foods/canned_6.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/canned_6.jpg',
+    'prices': [10, 20]
   }, 
   {
     key: 'a',
     title: 'Rice',
-    image: 'http://jacobbrown.net/assets/images/foods/carbs_1.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/carbs_1.jpg',
+    'prices': [15, 35]
   }, 
   {
     key: 'a',
     title: 'Quinoa',
-    image: 'http://jacobbrown.net/assets/images/foods/carbs_2.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/carbs_2.jpg',
+    'prices': [20, 45]
   }, 
   {
     key: 'a',
     title: 'White Sugar',
-    image: 'http://jacobbrown.net/assets/images/foods/carbs_3.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/carbs_3.jpg',
+    'prices': [20, 40]
   }, 
   {
     key: 'a',
     title: 'Beef Broth',
-    image: 'http://jacobbrown.net/assets/images/foods/carbs_4.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/carbs_4.jpg',
+    'prices': [15, 40]
   },
   {
     key: 'a',
     title: 'Granola Cereal',
-    image: 'http://jacobbrown.net/assets/images/foods/cereal_1.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/cereal_1.jpg',
+    'prices': [15, 40]
   },
   {
     key: 'a',
     title: 'Cheez-its',
-    image: 'http://jacobbrown.net/assets/images/foods/crackers_1.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/crackers_1.jpg',
+    'prices': [15, 30]
   }, 
   {
     key: 'a',
     title: 'Wheat Thins',
-    image: 'http://jacobbrown.net/assets/images/foods/crackers_2.jpg'
+    image: 'http://jacobbrown.net/assets/images/foods/crackers_2.jpg',
+    'prices': [15, 35]
   }
 ]

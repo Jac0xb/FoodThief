@@ -12,6 +12,10 @@ import { LinearGradient } from 'expo';
 import { ButtonGroup } from 'react-native-elements';
 
 export default class ItemDescription extends React.Component {
+    constructor(props) {
+        super(props);
+        this.myRef = React.createRef();
+    }
     render() {
         
         var {item} = this.props;
@@ -21,8 +25,8 @@ export default class ItemDescription extends React.Component {
             <Image style={[styles.productImage]} source={{uri: item.image}} />
             <Text style={styles.productTitle}>{item.title}</Text>
             <Text style={styles.description}>{item.description}</Text>
-            <QuantityGroup style={[styles.quantityGroup]}/>
-            <TouchableHighlight underlayColor="rgba(0,0,0,0.1)" style={[styles.checkoutButton, styles.shadow, {backgroundColor: "#6BD968"}]} onPress={() => {}}>
+            <QuantityGroup ref={this.myRef} style={[styles.quantityGroup]}/>
+            <TouchableHighlight underlayColor="rgba(0,0,0,0.1)" style={[styles.checkoutButton, styles.shadow, {backgroundColor: "#6BD968"}]} onPress={() => this.props.addToCart(item, this.myRef.current.state.quantity)}>
                 <Text style={[styles.checkoutText, styles.shadow]}>Add to Cart</Text>   
             </TouchableHighlight>
         </ScrollView>
@@ -35,7 +39,7 @@ class QuantityGroup extends React.Component {
       super()
       this.state = {
         selectedIndex: 2,
-        quantity: 0
+        quantity: 1
       }
       this.updateIndex = this.updateIndex.bind(this)
     }
@@ -49,8 +53,8 @@ class QuantityGroup extends React.Component {
       const { selectedIndex } = this.state
     
       return (
-        <View style={{flex: 1, flexDirection: "row", width: "100%"}}>
-            <Text style={styles.quantityText}>What Quantity? {this.state.quantity}</Text>
+        <View style={{flex: 0, flexDirection: "row", width: "100%"}}>
+            <Text style={styles.quantityText}>Quantity: {this.state.quantity}</Text>
             <ButtonGroup
               onPress={this.updateIndex}
               selectedIndex={selectedIndex}
@@ -73,7 +77,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#6BD968",
         borderRadius: 16,
         alignItems: 'center',
-        height: 40
+        height: 40,
+        marginVertical: 8 
     },
     description: {
         fontSize: 16,
@@ -81,11 +86,14 @@ const styles = StyleSheet.create({
     },
     quantityText: {
         lineHeight: 40,
-        fontSize: 16
+        height: 40,
+        fontSize: 16,
+        fontFamily: "roboto",
+        marginVertical: 5
     },
     quantityButtons: {
         flex: 1,
-        width: 80,
+        width: 60,
         height: 40
     },
     scrollViewContainer: {

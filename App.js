@@ -1,13 +1,15 @@
 import React from 'react';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import LoginScreen from "./stories/login/LoginScreen.js";
-import UserNavigation from "./navigation/AppNavigator";
+import HomeScreen from "./stories/user/HomeScreen.js";
+//import UserNavigation from "./navigation/AppNavigator";
 import { View, Text } from 'react-native';
 
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
-    currentWindow: "login"
+    currentWindow: "login",
+    
   };
 
   render() {
@@ -23,7 +25,7 @@ export default class App extends React.Component {
       if (this.state.currentWindow == "login")
         return <LoginScreen submitFunction={() => this.setState({currentWindow: "user"})} />
       if (this.state.currentWindow == "user")
-        return <UserNavigation />
+        return <HomeScreen />
       else {
         return <LoginScreen submitFunction={() => this.setState({currentWindow: "user"})} />
       }
@@ -47,7 +49,9 @@ export default class App extends React.Component {
         'roboto': require('./assets/fonts/Roboto-Regular.ttf'),
         'osward': require('./assets/fonts/Oswald-Regular.ttf'),
         'osward-bold': require('./assets/fonts/Oswald-Bold.ttf'),
-      }),
+        'Roboto': require('native-base/Fonts/Roboto.ttf'),
+        'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+         }),
     ]);
   };
 
